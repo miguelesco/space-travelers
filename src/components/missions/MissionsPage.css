@@ -1,0 +1,11 @@
+.active-member {
+  background-color: #18A2B8;
+  border-radius: 5px;
+  color: white;
+}
+
+.not-member {
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+}
