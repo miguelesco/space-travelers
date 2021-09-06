@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import GlobalStyles from '../styles/GlobalStyles';
 import Navbar from './navbar/Navbar';
+import ProfilePage from './profile/ProfilePage';
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
         <Route path="/" exact>
           <h1>home</h1>
         </Route>
-        <Route path="/test">
-          <h2> test</h2>
+        <Route path="/profile">
+          <ProfilePage />
         </Route>
       </Switch>
     </Router>

@@ -7,7 +7,7 @@ const NavbarContainer = styled.nav`
   border-bottom: 1px solid #e5e5e5;
   box-shadow: 0 1px 0 rgba(9, 30, 66, 0.05);
   ${flex('row', 'center', 'space-between')};
-  padding: 0.5rem 2.5rem;
+  padding: 1.5rem 2.5rem;
   width: 100%;
   z-index: 1;
   box-sizing: border-box;
@@ -24,10 +24,13 @@ const NavbarContainer = styled.nav`
       a {
         text-decoration: none;
       }
-      a:hover, a:focus, a:active {
+      a:hover {
         color: blue;
       }
-
+      a:active, a:focus {
+        text-decoration: underline blue; 
+        color: blue;
+      }
     }
   }
 `;
