@@ -1,15 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Book Store Project
+# Space Travelers Project
 
-In this project, I set up a Book Store that allow teh user save, get and remove, books from a API using Redux
+Web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
 <!-- - ![screenshot](./src/resources/1.png)  
 - ![screenshot](./src/resources/2.png)  -->
 
 ## :red_circle: Live Demo
 
-- [Github](https://miguelesco.github.io/bookstore/#/) 
+- [Github](https://miguelesco.github.io/space-travelers/#/) 
 
 ## :hammer: Built With
 
@@ -25,22 +25,32 @@ To get a local copy up and running follow these simple steps:
 
 ## :blue_book: Learning Objectives
 
-- Understand the concept of state management.
-- Use store, actions and reducers in React.
+- Use React documentation.
+- Use React components.
+- Use React props.
+- Use React Router.
 - Connect React and Redux.
+- Handle events in a React app.
+- Write unit tests with React Testing Library.
+- Use styles in a React app.
+- Use React life cycle methods.
 - Apply React best practices and language style guides in code.
+- Use store, actions and reducers in React.
+- Perform a code review for a team member.
 
 ## Authors
 
 👤 **Miguelesco**
+👤 **Carloso0114**
 
 - GitHub: [@Miguelesco](https://github.com/miguelesco)
+- GitHub: [@carloso0114](https://github.com/carloso0114)
 
 ## 🤝 :raised_hand: :raised_hand: Contributions
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/miguelesco/bookstore/issues).
+Feel free to check the [issues page](https://github.com/miguelesco/space-travelers/issues).
 
 ## :grey_exclamation: Acknowledgments
 
