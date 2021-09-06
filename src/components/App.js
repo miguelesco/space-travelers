@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 function App() {
   return (
     <div className="App">
