@@ -1,11 +1,10 @@
-import uuid from 'react-uid';
+import uuid from 'react-uuid';
 
 const initialMissions = [
   {
     id: uuid(),
     title: 'Test',
     description: 'lorem ipsum',
-
   },
 ];
 
