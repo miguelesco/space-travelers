@@ -6,9 +6,6 @@ export const RocketContainer = styled.div`
   ${flex('row', 'flex-start', 'flex-start')};
   flex-wrap: wrap;
   margin: 20px 0;
-  div {
-    flex: 1 0 33%; 
-  }
   @media ${device.lg} {
     flex-direction: column;
   }
