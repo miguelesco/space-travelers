@@ -15,6 +15,7 @@ export const RocketImg = styled.div`
   width: 35%;
   height: 100%;
   background-color: #000;
+  color: #fff;
   @media ${device.lg} {
     width: 100%;
   }

@@ -4,7 +4,6 @@ import {
   RocketContainer, RocketImg, RocketTitle,
   RocketText, RocketBtn, CardBlock, Reserved,
 } from './styles';
-import rocketImg from '../../../assets/images/rocket.jpg';
 
 const Rocket = (props) => {
   const { rocket } = props;
@@ -12,10 +11,10 @@ const Rocket = (props) => {
   return (
     <RocketContainer className="card">
       <RocketImg>
-        <img className="card-img" src={rocketImg} alt="rocket" />
+        <img className="card-img" src={rocket.img} alt="rocket" />
       </RocketImg>
       <CardBlock className="card-body">
-        <RocketTitle className="card-title">{rocket.title}</RocketTitle>
+        <RocketTitle className="card-title">{rocket.name}</RocketTitle>
         <RocketText reserve={rocket.reserve} className="card-text">
           <Reserved className="position-absolute badge rounded-pill ">Reserved</Reserved>
           <p>{rocket.description}</p>
@@ -30,8 +29,8 @@ export default Rocket;
 
 Rocket.propTypes = {
   rocket: Proptypes.shape({
-    id: Proptypes.string,
-    title: Proptypes.string,
+    id: Proptypes.number,
+    name: Proptypes.string,
     description: Proptypes.string,
     img: Proptypes.string,
     reserve: Proptypes.bool,
