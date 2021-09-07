@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import uuid from 'react-uuid';
 
 const initialMissions = [
