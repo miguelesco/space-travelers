@@ -1,9 +1,11 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
-import { SpanMember, SpanNotMember } from './style';
+import PropTypes from 'prop-types';
+import Mission from './mission/mission';
 
-const profilePage = () => (
-  <div>
+const missionsPage = (props) => {
+  const { missions } = props;
+  return (
     <table className="table caption-top table-bordered table-striped">
       <thead>
         <tr>
@@ -14,27 +16,19 @@ const profilePage = () => (
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th><strong>Thaicom</strong></th>
-          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-          <td className="align-middle"><SpanNotMember>NOT A MEMBER</SpanNotMember></td>
-          <td className="text-center align-middle"><button type="button" className="btn btn-outline-secondary">Join Mission</button></td>
-        </tr>
-        <tr>
-          <th><strong>Telstar</strong></th>
-          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-          <td className="align-middle"><SpanMember>Active Member</SpanMember></td>
-          <td className="text-center align-middle"><button type="button" className="btn btn-outline-danger">Leave Mission</button></td>
-        </tr>
-        <tr>
-          <th><strong>Iridium Next</strong></th>
-          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-          <td className="align-middle"><SpanNotMember>NOT A MEMBER</SpanNotMember></td>
-          <td className="text-center align-middle"><button type="button" className="btn btn-outline-secondary">Join Mission</button></td>
-        </tr>
+        {missions.map((mission) => (
+          <Mission mission={mission} key={mission.id} />
+        ))}
       </tbody>
     </table>
-  </div>
-);
+  );
+};
+export default missionsPage;
 
-export default profilePage;
+missionsPage.propTypes = {
+  missions: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    description: PropTypes.string,
+  })).isRequired,
+};

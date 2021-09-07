@@ -15,7 +15,7 @@ import Rockets from './rockets/MainRockets';
 import MissionsPage from './missions/MissionsPage';
 
 function App() {
-  const { rocketReducer } = useSelector((state) => state);
+  const { rocketReducer, missionsReducer } = useSelector((state) => state);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRockets());
@@ -30,7 +30,7 @@ function App() {
           <Rockets rockets={rocketReducer} />
         </Route>
         <Route path="/missions">
-          <MissionsPage />
+          <MissionsPage missions={missionsReducer} />
         </Route>
         <Route path="/profile">
           <ProfilePage />
