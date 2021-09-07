@@ -8,9 +8,9 @@ const profilePage = () => (
       <thead>
         <tr>
           <th className="col-1"><strong>Mission</strong></th>
-          <th className="col-9"><strong>Description</strong></th>
+          <th className="col-8"><strong>Description</strong></th>
           <th className="col-1"><strong>Status</strong></th>
-          <th className="col-1"> </th>
+          <th className="col-2"> </th>
         </tr>
       </thead>
       <tbody>
