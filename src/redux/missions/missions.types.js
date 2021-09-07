@@ -1,2 +1,4 @@
-export const BASE_URL = 'APIURL';
-export const APP_ID = '123456';
+/* eslint-disable linebreak-style */
+const ADD_MISSION = 'spaceTravels/missions/ADD_MISSION';
+
+export default ADD_MISSION;
