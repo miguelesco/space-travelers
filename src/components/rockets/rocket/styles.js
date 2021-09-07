@@ -1,13 +1,16 @@
 /* eslint-disable linebreak-style */
 import styled from 'styled-components';
-import { flex } from '../../../styles/breakPoints';
+import device, { flex } from '../../../styles/breakPoints';
 
 export const RocketContainer = styled.div`
-  ${flex('row', 'flex-start', 'space-between')};
+  ${flex('row', 'flex-start', 'flex-start')};
   flex-wrap: wrap;
   margin: 20px 0;
   div {
     flex: 1 0 33%; 
+  }
+  @media ${device.lg} {
+    flex-direction: column;
   }
 `;
 
@@ -15,6 +18,9 @@ export const RocketImg = styled.div`
   width: 35%;
   height: 100%;
   background-color: #000;
+  @media ${device.lg} {
+    width: 100%;
+  }
   img {
     width: 100%;
   }
@@ -32,7 +38,9 @@ export const RocketTitle = styled.h2`
 
 export const RocketText = styled.div`
   p {
-    text-indent: ${(props) => (props.reserve ? '4.8em;' : '0')}
+    text-indent: ${(props) => (props.reserve ? '4.8em;' : '0')};
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
   small {
     ${(props) => (props.reserve ? 'display: block;' : 'display: none;')}

@@ -6,9 +6,9 @@ const size = {
 };
 
 const device = {
-  xs: `(min-width: ${size.xs})`,
-  sm: `(min-width: ${size.sm})`,
-  lg: `(min-width: ${size.lg})`,
+  xs: `(max-width: ${size.xs})`,
+  sm: `(max-width: ${size.sm})`,
+  lg: `(max-width: ${size.lg})`,
 };
 
 export const flex = (direction, align, justify) => `
