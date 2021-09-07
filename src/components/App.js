@@ -7,6 +7,7 @@ import {
 import GlobalStyles from '../styles/GlobalStyles';
 import Navbar from './navbar/Navbar';
 import ProfilePage from './profile/ProfilePage';
+import Rockets from './rockets/MainRockets';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route path="/" exact>
-          <h1>home</h1>
+          <Rockets />
         </Route>
         <Route path="/profile">
           <ProfilePage />
