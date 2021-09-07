@@ -1,13 +1,13 @@
 /* eslint-disable linebreak-style */
-import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import Container from './styles';
 import Rocket from './rocket/rocket';
 
-const MainRockets = () => {
-  const { rocketReducer } = useSelector((state) => state);
+const MainRockets = (props) => {
+  const { rockets } = props;
   return (
     <Container className="container">
-      {rocketReducer.map((rocket) => (
+      {rockets.map((rocket) => (
         <Rocket rocket={rocket} key={rocket.id} />
       ))}
     </Container>
@@ -15,3 +15,12 @@ const MainRockets = () => {
 };
 
 export default MainRockets;
+
+MainRockets.propTypes = {
+  rockets: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    img: PropTypes.string,
+  })).isRequired,
+};

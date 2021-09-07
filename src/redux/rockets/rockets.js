@@ -1,34 +1,23 @@
 /* eslint-disable linebreak-style */
-import uuid from 'react-uuid';
+import ADD_ROCKET from './rockets.types';
 
 const initialRockets = [
-  {
-    id: uuid(),
-    img: '../../../assets/images/rocket.jpg',
-    title: 'Falcon 1',
-    reserve: false,
-    description: 'loremIpsum loremIpsum loremIpsuml oremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsum',
-  },
-  {
-    id: uuid(),
-    title: 'Falcon 9',
-    reserve: true,
-    img: '../../../assets/images/rocket.jpg',
-    description: 'loremIpsum loremIpsum loremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsum',
-  },
-  {
-    id: uuid(),
-    title: 'Falcon Heavy',
-    reserve: false,
-    img: '../../../assets/images/rocket.jpg',
-    description: 'loremIpsum loremIpsum loremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsumloremIpsum',
-  },
 ];
 
 const RocketReducer = (state = initialRockets, action) => {
   const rocketList = [...state];
 
   switch (action.type) {
+    case ADD_ROCKET: {
+      const newRockets = [...action.payload];
+      const filterRockets = newRockets.map((rocket) => ({
+        id: rocket.id,
+        name: rocket.rocket_name,
+        description: rocket.description,
+        img: rocket.flickr_images[0],
+      }));
+      return [...rocketList, ...filterRockets];
+    }
     default:
       return rocketList;
   }
