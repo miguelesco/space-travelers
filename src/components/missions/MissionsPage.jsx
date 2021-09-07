@@ -1,10 +1,18 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import Mission from './mission/mission';
+import { fetchMissions } from '../../redux/missions/missions.actions';
 
-const missionsPage = (props) => {
-  const { missions } = props;
+const missionsPage = () => {
+  const { missionsReducer } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (missionsReducer.length === 0) {
+      dispatch(fetchMissions());
+    }
+  }, []);
   return (
     <table className="table caption-top table-bordered table-striped">
       <thead>
@@ -16,7 +24,7 @@ const missionsPage = (props) => {
         </tr>
       </thead>
       <tbody>
-        {missions.map((mission) => (
+        {missionsReducer.map((mission) => (
           <Mission mission={mission} key={mission.id} />
         ))}
       </tbody>
@@ -24,11 +32,3 @@ const missionsPage = (props) => {
   );
 };
 export default missionsPage;
-
-missionsPage.propTypes = {
-  missions: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    description: PropTypes.string,
-  })).isRequired,
-};

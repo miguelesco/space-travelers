@@ -7,7 +7,6 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchRockets } from '../redux/rockets/rockets.actions';
-import { fetchMissions } from '../redux/missions/missions.actions';
 import GlobalStyles from '../styles/GlobalStyles';
 import Navbar from './navbar/Navbar';
 import ProfilePage from './profile/ProfilePage';
@@ -15,11 +14,10 @@ import Rockets from './rockets/MainRockets';
 import MissionsPage from './missions/MissionsPage';
 
 function App() {
-  const { rocketReducer, missionsReducer } = useSelector((state) => state);
+  const { rocketReducer } = useSelector((state) => state);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchRockets());
-    dispatch(fetchMissions());
   }, []);
   return (
     <Router>
@@ -30,7 +28,7 @@ function App() {
           <Rockets rockets={rocketReducer} />
         </Route>
         <Route path="/missions">
-          <MissionsPage missions={missionsReducer} />
+          <MissionsPage />
         </Route>
         <Route path="/profile">
           <ProfilePage />
