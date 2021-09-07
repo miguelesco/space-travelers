@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const profilePage = () => (
   <div className="row">
     <div className="col">
