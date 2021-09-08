@@ -14,21 +14,23 @@ const missionsPage = () => {
     }
   }, []);
   return (
-    <table className="table caption-top table-bordered table-striped">
-      <thead>
-        <tr>
-          <th className="col-1"><strong>Mission</strong></th>
-          <th className="col-8"><strong>Description</strong></th>
-          <th className="col-1"><strong>Status</strong></th>
-          <th className="col-2"> </th>
-        </tr>
-      </thead>
-      <tbody>
-        {missionsReducer.map((mission) => (
-          <Mission mission={mission} key={mission.id} />
-        ))}
-      </tbody>
-    </table>
+    <div className="mx-5 mt-4">
+      <table className="table caption-top table-bordered table-striped">
+        <thead>
+          <tr>
+            <th className="col-1"><strong>Mission</strong></th>
+            <th className="col-9"><strong>Description</strong></th>
+            <th className="col-1"><strong>Status</strong></th>
+            <th className="col-1"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          {missionsReducer.map((mission) => (
+            <Mission mission={mission} key={mission.id} />
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 export default missionsPage;
