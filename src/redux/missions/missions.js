@@ -11,7 +11,7 @@ const MissionsReducer = (state = initialMissions, action) => {
       const mission = missionsList.map((mission) => {
         if (mission.id === action.missionId) {
           if (mission.member) {
-            return { ...mission, reserved: false };
+            return { ...mission, member: false };
           }
           return { ...mission, member: true };
         }
