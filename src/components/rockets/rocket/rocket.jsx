@@ -22,7 +22,9 @@ const Rocket = (props) => {
       <CardBlock className="card-body">
         <RocketTitle className="card-title">{rocket.name}</RocketTitle>
         <RocketText reserved={rocket.reserved} className="card-text">
-          <Reserved className="position-absolute badge rounded-pill ">Reserved</Reserved>
+          {rocket.reserved && (
+            <Reserved className="position-absolute badge rounded-pill ">Reserved</Reserved>
+          )}
           <p>{rocket.description}</p>
         </RocketText>
         <RocketBtn reserved={rocket.reserved} onClick={() => handdleReservation(rocket.id)} className="btn btn-primary">{rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}</RocketBtn>
