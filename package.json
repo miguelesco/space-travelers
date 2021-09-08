@@ -1,5 +1,6 @@
 {
   "name": "space-travelers",
+  "homepage": "space-travelers",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
