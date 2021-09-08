@@ -8,6 +8,11 @@ export const addMission = (mission) => ({
   payload: mission,
 });
 
+export const joinMission = (missionId) => ({
+  type: JOIN_MISSION,
+  missionId,
+});
+
 export const fetchMissions = () => async (dispatch) => {
   const res = await axios.get('https://api.spacexdata.com/v3/missions');
   dispatch(addMission(res.data));
