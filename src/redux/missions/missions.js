@@ -8,14 +8,14 @@ const MissionsReducer = (state = initialMissions, action) => {
 
   switch (action.type) {
     case JOIN_MISSION: {
-      const mission = missionsList.map((rocket) => {
-        if (rocket.id === action.rocketId) {
-          if (rocket.reserved) {
-            return { ...rocket, reserved: false };
+      const mission = missionsList.map((mission) => {
+        if (mission.id === action.missionId) {
+          if (mission.member) {
+            return { ...mission, reserved: false };
           }
-          return { ...rocket, reserved: true };
+          return { ...mission, member: true };
         }
-        return rocket;
+        return mission;
       });
       return mission;
     }
