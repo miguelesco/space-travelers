@@ -3,13 +3,12 @@ import Proptypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 const ProfilePage = (props) => {
-  const { rockets } = props;
+  const { rockets, missions } = props;
   const [reservedRockets, setReservedRockets] = useState([]);
+  const [joinedMissions, setJoinedMissions] = useState([]);
   useEffect(() => {
     setReservedRockets(rockets.filter((rocket) => rocket.reserved));
   }, [rockets]);
-  const { missions } = props;
-  const [joinedMissions, setJoinedMissions] = useState([]);
   useEffect(() => {
     setJoinedMissions(missions.filter((mission) => mission.member));
   }, [missions]);
