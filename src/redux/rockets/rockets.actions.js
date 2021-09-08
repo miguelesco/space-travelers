@@ -1,10 +1,15 @@
 /* eslint-disable linebreak-style */
 import axios from 'axios';
-import ADD_ROCKET from './rockets.types';
+import { ADD_ROCKET, RESERVE_ROCKET } from './rockets.types';
 
 export const addRocket = (rocket) => ({
   type: ADD_ROCKET,
   payload: rocket,
+});
+
+export const reserveRocket = (rocketId) => ({
+  type: RESERVE_ROCKET,
+  rocketId,
 });
 
 export const fetchRockets = () => async (dispatch) => {

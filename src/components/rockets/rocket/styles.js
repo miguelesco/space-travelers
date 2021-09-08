@@ -36,12 +36,12 @@ export const RocketTitle = styled.h2`
 
 export const RocketText = styled.div`
   p {
-    text-indent: ${(props) => (props.reserve ? '4.8em;' : '0')};
+    text-indent: ${(props) => (props.reserved ? '4.8em;' : '0')};
     font-size: 0.8rem;
     line-height: 1.5;
   }
   small {
-    ${(props) => (props.reserve ? 'display: block;' : 'display: none;')}
+    ${(props) => (props.reserved ? 'display: block;' : 'display: none;')}
   }
 `;
 
@@ -52,7 +52,7 @@ export const Reserved = styled.small`
 
 export const RocketBtn = styled.button`
   ${(props) => {
-    if (props.reserve) {
+    if (props.reserved) {
       return (
         `
         background-color: transparent; 

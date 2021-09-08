@@ -1,4 +1,4 @@
 /* eslint-disable linebreak-style */
-const ADD_ROCKET = 'spaceTravels/rockets/ADD_BOOK';
+export const ADD_ROCKET = 'spaceTravels/rockets/ADD_ROCKET';
 
-export default ADD_ROCKET;
+export const RESERVE_ROCKET = 'spaceTravels/rockets/RESERVE_ROCKET';
