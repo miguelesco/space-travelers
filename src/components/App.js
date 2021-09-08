@@ -31,7 +31,7 @@ function App() {
           <MissionsPage />
         </Route>
         <Route path="/profile">
-          <ProfilePage />
+          <ProfilePage rockets={rocketReducer} />
         </Route>
       </Switch>
     </Router>
