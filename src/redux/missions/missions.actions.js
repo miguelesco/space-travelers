@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
-import ADD_MISSION from './missions.types';
+import { ADD_MISSION, JOIN_MISSION } from './missions.types';
 
 export const addMission = (mission) => ({
   type: ADD_MISSION,
