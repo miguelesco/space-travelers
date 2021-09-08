@@ -17,7 +17,7 @@ const Mission = (props) => {
       <th><strong>{mission.name}</strong></th>
       <td>{mission.description}</td>
       <td className="align-middle">
-        <SpanMember member={mission.member}>NOT A MEMBER</SpanMember>
+        <SpanMember member={mission.member}>{mission.member ? 'Active Member' : 'NOT A MEMBER'}</SpanMember>
       </td>
       <td className="text-center align-middle">
         <JoinBtn
