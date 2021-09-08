@@ -2,7 +2,7 @@
 import Proptypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { joinMission } from '../../../redux/missions/missions.actions';
-import { SpanNotMember } from './style';
+import { SpanMember, JoinBtn } from './style';
 
 const Mission = (props) => {
   const { mission } = props;
@@ -16,8 +16,19 @@ const Mission = (props) => {
     <tr>
       <th><strong>{mission.name}</strong></th>
       <td>{mission.description}</td>
-      <td className="align-middle"><SpanNotMember>NOT A MEMBER</SpanNotMember></td>
-      <td className="text-center align-middle"><button type="button" className="btn btn-outline-secondary" onClick={() => handleJoinMission(mission.id)}>Join Mission</button></td>
+      <td className="align-middle">
+        <SpanMember member={mission.member}>NOT A MEMBER</SpanMember>
+      </td>
+      <td className="text-center align-middle">
+        <JoinBtn
+          member={mission.member}
+          type="button"
+          className="btn btn-outline-secondary"
+          onClick={() => handleJoinMission(mission.id)}
+        >
+          {mission.member ? 'Leave Mission' : 'Join Mission'}
+        </JoinBtn>
+      </td>
     </tr>
   );
 };
@@ -29,5 +40,6 @@ Mission.propTypes = {
     id: Proptypes.string,
     name: Proptypes.string,
     description: Proptypes.string,
+    member: Proptypes.bool,
   }).isRequired,
 };
