@@ -8,24 +8,22 @@ const ProfilePage = (props) => {
   useEffect(() => {
     setReservedRockets(rockets.filter((rocket) => rocket.reserved));
   }, [rockets]);
+  const { missions } = props;
+  const [joinedMissions, setJoinedMissions] = useState([]);
+  useEffect(() => {
+    setJoinedMissions(missions.filter((mission) => mission.member));
+  }, [missions]);
   return (
     <div className="row">
       <div className="col">
         <h2>My Missions</h2>
         <table className="table table-bordered table-hover">
           <tbody>
-            <tr>
-              <td>Telstar</td>
-            </tr>
-            <tr>
-              <td>SES</td>
-            </tr>
-            <tr>
-              <td>AsiaSat</td>
-            </tr>
-            <tr>
-              <td>ABS</td>
-            </tr>
+            {joinedMissions.map((mission) => (
+              <tr key={mission.id}>
+                <td>{mission.name}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -54,5 +52,11 @@ ProfilePage.propTypes = {
     description: Proptypes.string,
     img: Proptypes.string,
     reserved: Proptypes.bool,
+  })).isRequired,
+  missions: Proptypes.arrayOf(Proptypes.shape({
+    id: Proptypes.string,
+    name: Proptypes.string,
+    description: Proptypes.string,
+    member: Proptypes.bool,
   })).isRequired,
 };
