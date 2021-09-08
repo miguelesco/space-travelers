@@ -13,7 +13,7 @@ const ProfilePage = (props) => {
     setJoinedMissions(missions.filter((mission) => mission.member));
   }, [missions]);
   return (
-    <div className="row">
+    <div className="row mx-5 mt-4">
       <div className="col">
         <h2>My Missions</h2>
         <table className="table table-bordered table-hover">
