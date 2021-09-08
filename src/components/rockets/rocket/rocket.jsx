@@ -1,5 +1,7 @@
 /* eslint-disable linebreak-style */
 import Proptypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { reserveRocket } from '../../../redux/rockets/rockets.actions';
 import {
   RocketContainer, RocketImg, RocketTitle,
   RocketText, RocketBtn, CardBlock, Reserved,
@@ -7,6 +9,10 @@ import {
 
 const Rocket = (props) => {
   const { rocket } = props;
+  const dispatch = useDispatch();
+  const handdleReservation = (id) => {
+    dispatch(reserveRocket(id));
+  };
 
   return (
     <RocketContainer className="card">
@@ -15,11 +21,11 @@ const Rocket = (props) => {
       </RocketImg>
       <CardBlock className="card-body">
         <RocketTitle className="card-title">{rocket.name}</RocketTitle>
-        <RocketText reserve={rocket.reserve} className="card-text">
+        <RocketText reserved={rocket.reserved} className="card-text">
           <Reserved className="position-absolute badge rounded-pill ">Reserved</Reserved>
           <p>{rocket.description}</p>
         </RocketText>
-        <RocketBtn reserve={rocket.reserve} className="btn btn-primary">{rocket.reserve ? 'Cancel Reservation' : 'Reserve Rocket'}</RocketBtn>
+        <RocketBtn reserved={rocket.reserved} onClick={() => handdleReservation(rocket.id)} className="btn btn-primary">{rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}</RocketBtn>
       </CardBlock>
     </RocketContainer>
   );
@@ -33,6 +39,6 @@ Rocket.propTypes = {
     name: Proptypes.string,
     description: Proptypes.string,
     img: Proptypes.string,
-    reserve: Proptypes.bool,
+    reserved: Proptypes.bool,
   }).isRequired,
 };
