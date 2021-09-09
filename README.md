@@ -10,7 +10,7 @@ Web application for a company that provides commercial and scientific space trav
 ## :red_circle: Live Demo and Explaining Video
 
 - [Github](https://miguelesco.github.io/space-travelers/#/) 
-- [Video] (https://drive.google.com/file/d/19v2qmLicQpC1iwcgVnjCYieaM2OXJ-M-/view?usp=sharing)
+- [Video](https://drive.google.com/file/d/19v2qmLicQpC1iwcgVnjCYieaM2OXJ-M-/view?usp=sharing)
 
 ## :hammer: Built With
 
